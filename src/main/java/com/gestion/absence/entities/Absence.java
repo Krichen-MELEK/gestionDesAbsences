@@ -8,14 +8,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Subject {
+public class Absence {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nom;
+    @ManyToOne()
+    private Student students;
+    @ManyToOne()
+    private Seance seance;
 }
