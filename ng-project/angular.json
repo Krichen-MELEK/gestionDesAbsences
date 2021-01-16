@@ -28,7 +28,8 @@
               "src/favicon.ico"
             ],
             "styles": [
-                "src/styles/styles.scss"
+              "node_modules/angular-calendar/css/angular-calendar.css",
+              "src/styles/styles.scss"
             ],
             "scripts": [
               "node_modules/chart.js/dist/Chart.js"
@@ -93,7 +94,8 @@
               "node_modules/chart.js/dist/Chart.js"
             ],
             "styles": [
-                "styles.scss"
+              "node_modules/angular-calendar/css/angular-calendar.css",
+              "styles.scss"
             ],
             "assets": [
               "src/assets",
@@ -137,7 +139,7 @@
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
             "exclude": [
-                "**/node_modules/**"
+              "**/node_modules/**"
             ]
           }
         }
