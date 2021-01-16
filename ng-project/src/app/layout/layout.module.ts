@@ -15,6 +15,7 @@ import {adapterFactory} from "angular-calendar/date-adapters/date-fns";
 import { AbsenteismeComponent } from './absenteisme/absenteisme.component';
 import {MatTableModule} from '@angular/material/table';
 import { EmploiScreenComponent } from './emploi-screen/emploi-screen.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { EmploiScreenComponent } from './emploi-screen/emploi-screen.component';
             useFactory: adapterFactory,
         }),
         SchedulerModule.forRoot({ locale: 'en', headerDateFormat: 'daysRange' }),
-        MatTableModule
+        MatTableModule,
+        MatSelectModule
     ],
     declarations: [
         Screen2Component,

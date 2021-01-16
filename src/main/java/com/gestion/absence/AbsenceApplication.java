@@ -72,7 +72,7 @@ public class AbsenceApplication implements CommandLineRunner {
         for (int i = 0; i < 40; i++) {
             List<Subject> subjects = new ArrayList<>();
             subjects.add(subjectList.get(i % 7));
-            Student student = new Student(null, String.format("Krichen_%d", i), String.format("Melek_%d", i), String.format("melek_%d@mail.com", i), "123", subjects);
+            Student student = new Student(null, String.format("guesmi_%d", i), String.format("Monia_%d", i), String.format("Monia.guesmi_%d@mail.com", i), "123", subjects);
             students.add(studentRepository.save(student));
         }
 
@@ -88,7 +88,7 @@ public class AbsenceApplication implements CommandLineRunner {
             List<Subject> teacherSubjects = new ArrayList<>();
             teacherSubjects.add(subjectList.get(i % 7));
             teacherSubjects.add(subjectList.get(1));
-            Teacher teacher = new Teacher(null, String.format("Langar_%d", i), String.format("Mahjoub_%d", i), String.format("melek_%d@mail.com", i), "123", teacherSubjects);
+            Teacher teacher = new Teacher(null, String.format("Samir%d", i), String.format("Kammoun_%d", i), String.format("samir_%d@mail.com", i), "123", teacherSubjects);
             teachers.add(teacherRepository.save(teacher));
         }
 

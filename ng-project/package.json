@@ -3,7 +3,7 @@
     "version": "7.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "start": "ng serve --proxy-config proxy.conf.json",
         "build": "ng build --prod",
         "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
         "gitbuild": "ng build --prod --base-href /start-javascript/sb-admin-material/master/dist/",

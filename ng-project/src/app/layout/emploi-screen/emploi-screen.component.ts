@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CalendarSchedulerEvent} from "angular-calendar-scheduler";
 import {AppService} from "../../services/app.service";
+import {Classe} from "../../shared/modal/classe";
+import {ClasseService} from "../../shared/services/classe.service";
 
 @Component({
   selector: 'app-emploi-screen',
@@ -9,8 +11,8 @@ import {AppService} from "../../services/app.service";
 })
 export class EmploiScreenComponent implements OnInit {
   public events: CalendarSchedulerEvent[] = [];
-
-  constructor(private appService: AppService) { }
+  public classes: Classe[] = [];
+  constructor(private appService: AppService,private classeService: ClasseService) { }
 
   ngOnInit(): void {
       // this.appService.getEvents()
@@ -30,7 +32,12 @@ export class EmploiScreenComponent implements OnInit {
           isDisabled: false
       }
       this.events.push(event);
-
+      this.classeService.getAllClasses().subscribe(
+          res => {
+              this.classes = res;
+              console.log("this.classes",this.classes);
+          }
+      )
   }
 
 }
