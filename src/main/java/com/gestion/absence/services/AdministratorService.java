@@ -1,0 +1,7 @@
+package com.gestion.absence.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class AdministratorService {
+}
