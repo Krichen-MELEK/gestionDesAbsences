@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { Screen1Component } from './screen1.component';
+import {NgModule, OnInit} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {StudentService} from 'src/app/shared/services/student.service';
+import {Screen1Component} from './screen1.component';
 
 const routes: Routes = [
     {
@@ -13,4 +14,24 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class Screen1RoutingModule {}
+
+export class Screen1RoutingModule implements OnInit {
+    students: any[]
+
+    constructor(private studentService: StudentService) {
+    }
+
+    ngOnInit(): void {
+
+        throw new Error('Method not implemented.');
+    }
+
+    getStudents() {
+        this.studentService.getStudents().subscribe(
+            data => {
+                this.students = data
+            }
+        )
+    }
+
+}

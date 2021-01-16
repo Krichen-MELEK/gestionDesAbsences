@@ -19,7 +19,7 @@ public class Absence {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne()
-    private Student students;
+    private Student student;
     @ManyToOne()
     private Seance seance;
 }
