@@ -82,6 +82,16 @@ public class AbsenceApplication implements CommandLineRunner {
         CreateSeances(subjectList, "room3");
         CreateSeances(subjectList, "room4");
 
+        // create Teachers
+        List<Teacher> teachers = new ArrayList<>();
+        for (int i = 5; i < 10; i++) {
+            List<Subject> teacherSubjects = new ArrayList<>();
+            teacherSubjects.add(subjectList.get(i % 7));
+            teacherSubjects.add(subjectList.get(1));
+            Teacher teacher = new Teacher(null, String.format("Langar_%d", i), String.format("Mahjoub_%d", i), String.format("melek_%d@mail.com", i), "123", teacherSubjects);
+            teachers.add(teacherRepository.save(teacher));
+        }
+
         // create classes
         List<Classe> classes = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
@@ -89,21 +99,10 @@ public class AbsenceApplication implements CommandLineRunner {
             for (int j = i * 10; j < (i * 10) + 10; j++) {
                 studentList.add(students.get(j));
             }
-            Classe classe = new Classe(null, String.format("classe_%d", i), studentList, seanceRepository.findByRoom(String.format("room%d", i + 1)));
+            Classe classe = new Classe(null, String.format("classe_%d", i), studentList, seanceRepository.findByRoom(String.format("room%d", i + 1)), teachers);
             classes.add(classeRepository.save(classe));
         }
 
-        // create Teachers
-        for (int i = 5; i < 10; i++) {
-            List<Subject> teacherSubjects = new ArrayList<>();
-            teacherSubjects.add(subjectList.get(i % 7));
-            teacherSubjects.add(subjectList.get(1));
-            List<Classe> teacherClasse = new ArrayList<>();
-            teacherClasse.add(classes.get(i % 4));
-            teacherClasse.add(classes.get((i + 1) % 4));
-            Teacher teacher = new Teacher(null, String.format("Langar_%d", i), String.format("Mahjoub_%d", i), String.format("melek_%d@mail.com", i), "123", teacherSubjects, teacherClasse);
-            teacherRepository.save(teacher);
-        }
 
         // create admin
         Administrator administrator = new Administrator(null, "admin", "admin", "admin@gmail.com", "123");

@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import java.util.List;
 
@@ -24,4 +25,6 @@ public class Classe {
     private List<Student> students;
     @OneToMany()
     private List<Seance> seances;
+    @ManyToMany
+    private List<Teacher> teacherClasse;
 }
