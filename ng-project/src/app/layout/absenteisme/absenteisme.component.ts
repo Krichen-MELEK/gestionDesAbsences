@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
+import {Absence} from 'src/app/shared/modal/absence';
+import {ResponseSeance} from 'src/app/shared/modal/response-seance';
+import {Student} from 'src/app/shared/modal/student';
+import {ClasseService} from 'src/app/shared/services/classe.service';
+
 export interface PeriodicElement {
     name: string;
     position: number;
@@ -20,17 +28,54 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-absenteisme',
-  templateUrl: './absenteisme.component.html',
-  styleUrls: ['./absenteisme.component.scss']
+    selector: 'app-absenteisme',
+    templateUrl: './absenteisme.component.html',
+    styleUrls: ['./absenteisme.component.scss']
 })
 export class AbsenteismeComponent implements OnInit {
-    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    dataSource = ELEMENT_DATA;
-    startDate = new Date(1990, 0, 1);
-  constructor() { }
+    displayedColumns: string[] = ['Subject', 'Room', 'Date', 'Heure debut', 'Heure fin', 'Nb of absences', 'Nb of presences', 'Nb of retards', 'Nb of appel non faite'];
+    students: Student[] = [];
+    absences: Absence[];
+    responseSeances: ResponseSeance[] = [];
+    dataSource: MatTableDataSource<ResponseSeance>;
 
-  ngOnInit(): void {
-  }
+
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
+
+    constructor(private classeService: ClasseService) {
+    }
+
+    ngOnInit(): void {
+        this.getAllSeances();
+    }
+
+    getAllSeances() {
+        this.classeService.getAllSeance().subscribe(
+            (data) => {
+                this.responseSeances = data;
+                // this.classes.forEach(
+                //     classe => {
+                //         this.students = this.students.concat(classe.students);
+                //     }
+                // )
+                this.dataSource = new MatTableDataSource(this.responseSeances)
+                this.dataSource.paginator = this.paginator;
+                this.dataSource.sort = this.sort;
+            }
+        )
+    }
+
+    // filterClasse(classe: number) {
+    //     this.students = [];
+    //     this.classes.forEach(item => {
+    //         if (item.id == classe) {
+    //             this.students = item.students;
+    //             this.dataSource = new MatTableDataSource(this.students)
+    //             this.dataSource.paginator = this.paginator;
+    //             this.dataSource.sort = this.sort;
+    //         }
+    //     })
+    // }
 
 }

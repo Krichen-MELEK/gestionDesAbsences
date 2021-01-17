@@ -2,7 +2,6 @@ import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
 import {
     addPeriod,
     CalendarSchedulerEvent,
-    CalendarSchedulerEventAction,
     DAYS_IN_WEEK,
     endOfPeriod,
     SchedulerDateFormatter,
@@ -13,10 +12,6 @@ import {
     startOfPeriod,
     subPeriod
 } from "angular-calendar-scheduler";
-import {
-    endOfDay,
-    addMonths, addHours, addDays, startOfHour, setHours
-} from 'date-fns';
 import {CalendarDateFormatter, CalendarView, DateAdapter} from 'angular-calendar';
 import {Subject} from "rxjs";
 import {AppService} from "../../services/app.service";
@@ -50,8 +45,8 @@ export class EmploiComponent implements OnInit {
     dayStartHour: number = 8;
     dayEndHour: number = 18;
 
-    minDate: Date = new Date();
-    maxDate: Date = new Date(2025,12,30);
+    minDate: Date = new Date(2021, 0, 1);
+    maxDate: Date = new Date(2025, 12, 30);
     dayModifier: Function;
     hourModifier: Function;
     segmentModifier: Function;

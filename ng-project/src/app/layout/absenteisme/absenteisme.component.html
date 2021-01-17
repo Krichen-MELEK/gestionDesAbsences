@@ -1,36 +1,76 @@
-<div>
-    <h2 style="display: inline-block">Tableau de bord du </h2>
-    <mat-form-field appearance="fill" style="display: inline-block; margin-left:20px" >
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
-    </mat-form-field>
+<!-- <mat-form-field appearance="fill" style="float: right; margin-top: 30px; margin-right: 30px;">
+    <mat-label>classe</mat-label>
+    <mat-select (selectionChange)="filterClasse($event.value)">
+        <mat-option *ngFor="let classe of classes" value="{{classe.id}}">{{classe.nom}}</mat-option>
+    </mat-select>
+</mat-form-field> -->
+
+<h1 style="text-align: center;"> Absenteisme </h1>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="Subject">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject</th>
+            <td mat-cell *matCellDef="let row"> {{row.subject}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Room">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Room</th>
+            <td mat-cell *matCellDef="let row"> {{row.room}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date</th>
+            <td mat-cell *matCellDef="let row"> {{row.dateDebut | date: 'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Heure debut">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Heure debut</th>
+            <td mat-cell *matCellDef="let row"> {{row.dateDebut | date: 'hh:mm'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Heure fin">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Heure fin</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.dateFin | date: 'hh:mm'}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Nb of absences">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nb of absences</th>
+            <td mat-cell *matCellDef="let row">
+
+                {{row.numberOfAbsence}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Nb of presences">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nb of presences</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.numberOfPresent}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Nb of retards">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nb of retards</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.numberOfRetard}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Nb of appel non faite">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nb of appel non faite</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.numberOfAppelNonFaite}}
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <!--        <tr class="mat-row" *matNoDataRow>-->
+        <!--            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>-->
+        <!--        </tr>-->
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-

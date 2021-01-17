@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AbsenteismeComponent } from "./absenteisme/absenteisme.component";
-import { EmploiScreenComponent } from "./emploi-screen/emploi-screen.component";
-import { LayoutComponent } from './layout.component';
-import { NoteAbsenceComponent } from "./note-absence/note-absence.component";
-import { Screen1Component } from './screen1/screen1.component';
-import { Screen2Component } from './screen2/screen2.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AbsenteismeComponent} from "./absenteisme/absenteisme.component";
+import {EmploiScreenComponent} from "./emploi-screen/emploi-screen.component";
+import {LayoutComponent} from './layout.component';
+import {NoteAbsenceComponent} from "./note-absence/note-absence.component";
+import {Screen1Component} from './screen1/screen1.component';
+import {Screen2Component} from './screen2/screen2.component';
 
 
 const routes: Routes = [
@@ -15,11 +15,7 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'dashboard'
-            },
-            {
-                path: 'dashboard',
-                loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+                redirectTo: 'emploi'
             },
             {
                 path: 'student',

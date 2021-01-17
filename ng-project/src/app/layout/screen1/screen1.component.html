@@ -1,3 +1,4 @@
+<h1 style="text-align: center;"> Liste des etudiants </h1>
 <mat-form-field appearance="fill" style="float: right; margin-top: 30px; margin-right: 30px;">
     <mat-label>classe</mat-label>
     <mat-select (selectionChange)="filterClasse($event.value)">
@@ -38,9 +39,9 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         <!-- Row shown when there is no matching data. -->
-        <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-        </tr>
+        <!--        <tr class="mat-row" *matNoDataRow>-->
+        <!--            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>-->
+        <!--        </tr>-->
     </table>
 
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

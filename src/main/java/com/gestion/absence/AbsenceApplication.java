@@ -114,16 +114,16 @@ public class AbsenceApplication implements CommandLineRunner {
             if (i == 10 || i == 17 || i == 24) {
                 i++;
             }
-            Calendar calendar = new GregorianCalendar(2021, 1, i, 8, 0);
-            Calendar calendar1 = new GregorianCalendar(2021, 1, i, 9, 0);
-            Calendar calendar2 = new GregorianCalendar(2021, 1, i, 10, 0);
-            Calendar calendar3 = new GregorianCalendar(2021, 1, i, 11, 0);
-            Calendar calendar4 = new GregorianCalendar(2021, 1, i, 12, 0);
-            Calendar calendar5 = new GregorianCalendar(2021, 1, i, 14, 0);
-            Calendar calendar6 = new GregorianCalendar(2021, 1, i, 15, 0);
-            Calendar calendar7 = new GregorianCalendar(2021, 1, i, 16, 0);
-            Calendar calendar8 = new GregorianCalendar(2021, 1, i, 17, 0);
-            Calendar calendar9 = new GregorianCalendar(2021, 1, i, 18, 0);
+            Calendar calendar = new GregorianCalendar(2021, 0, i, 8, 0);
+            Calendar calendar1 = new GregorianCalendar(2021, 0, i, 9, 0);
+            Calendar calendar2 = new GregorianCalendar(2021, 0, i, 10, 0);
+            Calendar calendar3 = new GregorianCalendar(2021, 0, i, 11, 0);
+            Calendar calendar4 = new GregorianCalendar(2021, 0, i, 12, 0);
+            Calendar calendar5 = new GregorianCalendar(2021, 0, i, 14, 0);
+            Calendar calendar6 = new GregorianCalendar(2021, 0, i, 15, 0);
+            Calendar calendar7 = new GregorianCalendar(2021, 0, i, 16, 0);
+            Calendar calendar8 = new GregorianCalendar(2021, 0, i, 17, 0);
+            Calendar calendar9 = new GregorianCalendar(2021, 0, i, 18, 0);
 
             Seance seance = new Seance(null, calendar.getTime(), calendar1.getTime(), room, subjectList.get(i % 7));
             Seance seance1 = new Seance(null, calendar1.getTime(), calendar2.getTime(), room, subjectList.get((i + 1) % 7));

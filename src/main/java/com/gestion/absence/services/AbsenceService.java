@@ -9,6 +9,8 @@ import com.gestion.absence.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AbsenceService {
 
@@ -20,7 +22,7 @@ public class AbsenceService {
     AbsenceRepository absenceRepository;
 
 
-    public void addAbsense(Long value, Long idStudent, Long idSeance) {
+    public void addAbsence(Long value, Long idStudent, Long idSeance) {
         Student student = studentRepository.findById(idStudent).get();
         Seance seance = seanceRepository.findById(idSeance).get();
         Absence absence = new Absence();
@@ -33,9 +35,17 @@ public class AbsenceService {
         } else if ("3".equals(value.toString())) {
             absence.setValeur("retard");
         } else {
-            absence.setValeur(" ");
+            absence.setValeur("appel non faite!");
         }
         absenceRepository.save(absence);
 
+    }
+
+    public List<Absence> findAll() {
+        return this.absenceRepository.findAll();
+    }
+
+    public List<Absence> findBySeance(Seance seance) {
+        return this.absenceRepository.findBySeance(seance);
     }
 }

@@ -1,6 +1,7 @@
+<h3 style="display: inline-block;"> Choisir une classe: </h3>
 <mat-form-field appearance="fill" style="margin-left: 100px">
     <mat-label>classe</mat-label>
-    <mat-select (selectionChange)="changeClasse($event.value)" >
+    <mat-select (selectionChange)="changeClasse($event.value)">
         <mat-option *ngFor="let classe of classes" value="{{classe.id}}">{{classe.nom}}</mat-option>
     </mat-select>
 </mat-form-field>
