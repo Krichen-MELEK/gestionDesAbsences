@@ -16,6 +16,7 @@ import { AbsenteismeComponent } from './absenteisme/absenteisme.component';
 import {MatTableModule} from '@angular/material/table';
 import { EmploiScreenComponent } from './emploi-screen/emploi-screen.component';
 import {MatSelectModule} from '@angular/material/select';
+import { NoteAbsenceComponent } from './note-absence/note-absence.component';
 
 @NgModule({
     imports: [
@@ -39,7 +40,8 @@ import {MatSelectModule} from '@angular/material/select';
         SidebarComponent,
         EmploiComponent,
         AbsenteismeComponent,
-        EmploiScreenComponent
+        EmploiScreenComponent,
+        NoteAbsenceComponent
     ]
 
 })

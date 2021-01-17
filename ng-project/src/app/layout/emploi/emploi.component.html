@@ -8,43 +8,23 @@
 <div class="calendar-container" *ngIf="events">
     <div class="row mt-4">
         <div class="col-md-4 text-left">
-            <!--<button type="button" routerLink="add" class="btn btn-light m-1" *ngIf="isAdmin">
-                Aggiungi
-            </button>-->
-            <!--<div class="btn-group">
-                <button type="button" class="btn btn-primary"
-                    (click)="changeView('month')"
-                    [class.active]="view === 'month'">
-                    Mese
-                </button>
-                <button type="button" class="btn btn-primary"
-                    (click)="changeView('week')"
-                    [class.active]="view === 'week'">
-                    Settimana
-                </button>
-                <button type="button" class="btn btn-primary"
-                    (click)="changeView('day')"
-                    [class.active]="view === 'day'">
-                    Giorno
-                </button>
-            </div>-->
         </div>
         <div class="col-md-4 text-center">
             <h3 class="mt-0">{{ viewDate | calendarSchedulerDate:(view + 'ViewTitle'):locale:weekStartsOn:excludeDays:viewDays:startsWithToday }}</h3>
-            <select #viewDayOptionSelect1 class="form-control d-none d-md-block d-xl-none" [ngModel]="viewDays" (change)="viewDaysOptionChanged(viewDayOptionSelect1.value)">
-                <option [value]="1">Un giorno</option>
-                <option [value]="3">Tre giorni</option>
-                <option [value]="7">Una settimana</option>
-            </select>
+<!--            <select #viewDayOptionSelect1 class="form-control d-none d-md-block d-xl-none" [ngModel]="viewDays" (change)="viewDaysOptionChanged(viewDayOptionSelect1.value)">-->
+<!--                <option [value]="1">Un giorno</option>-->
+<!--                <option [value]="3">Tre giorni</option>-->
+<!--                <option [value]="7">Una settimana</option>-->
+<!--            </select>-->
         </div>
         <div class="col-md-4 text-right">
             <div class="row">
                 <div class="col-6 d-md-none d-xl-flex col-xl-6 valign-center text-right">
-                    <select #viewDayOptionSelect2 class="form-control m-1" [ngModel]="viewDays" (change)="viewDaysOptionChanged(viewDayOptionSelect2.value)">
-                        <option [value]="1">Un giorno</option>
-                        <option [value]="3">Tre giorni</option>
-                        <option [value]="7">Una settimana</option>
-                    </select>
+<!--                    <select #viewDayOptionSelect2 class="form-control m-1" [ngModel]="viewDays" (change)="viewDaysOptionChanged(viewDayOptionSelect2.value)">-->
+<!--                        <option [value]="1">Un giorno</option>-->
+<!--                        <option [value]="3">Tre giorni</option>-->
+<!--                        <option [value]="7">Una settimana</option>-->
+<!--                    </select>-->
                 </div>
                 <div class="col-6 col-md-12 col-xl-6">
                     <div class="btn-group m-1" role="group">

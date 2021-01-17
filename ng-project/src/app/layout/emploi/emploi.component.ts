@@ -51,32 +51,13 @@ export class EmploiComponent implements OnInit {
     dayEndHour: number = 18;
 
     minDate: Date = new Date();
-    maxDate: Date = endOfDay(addMonths(new Date(), 1));
+    maxDate: Date = new Date(2025,12,30);
     dayModifier: Function;
     hourModifier: Function;
     segmentModifier: Function;
     eventModifier: Function;
     prevBtnDisabled: boolean = false;
     nextBtnDisabled: boolean = false;
-
-    actions: CalendarSchedulerEventAction[] = [
-        // {
-        //     when: 'enabled',
-        //     label: '<span class="valign-center"><i class="material-icons md-18 md-red-500">cancel</i></span>',
-        //     title: 'Delete',
-        //     onClick: (event: CalendarSchedulerEvent): void => {
-        //         console.log('Pressed action \'Delete\' on event ' + event.id);
-        //     }
-        // },
-        // {
-        //     when: 'cancelled',
-        //     label: '<span class="valign-center"><i class="material-icons md-18 md-red-500">autorenew</i></span>',
-        //     title: 'Restore',
-        //     onClick: (event: CalendarSchedulerEvent): void => {
-        //         console.log('Pressed action \'Restore\' on event ' + event.id);
-        //     }
-        // }
-    ];
 
     @Input("events") events: CalendarSchedulerEvent[];
 

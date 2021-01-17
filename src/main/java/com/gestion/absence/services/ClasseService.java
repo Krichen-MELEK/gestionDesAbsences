@@ -15,4 +15,8 @@ public class ClasseService {
     public List<Classe> findAll() {
         return classeRepository.findAll();
     }
+
+    public Classe findById(Long id) {
+        return classeRepository.findById(id).get();
+    }
 }

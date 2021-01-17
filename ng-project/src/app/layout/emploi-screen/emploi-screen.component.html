@@ -1,1 +1,8 @@
-<app-emploi [events]="events"></app-emploi>
+<mat-form-field appearance="fill" style="margin-left: 100px">
+    <mat-label>classe</mat-label>
+    <mat-select (selectionChange)="changeClasse($event.value)" >
+        <mat-option *ngFor="let classe of classes" value="{{classe.id}}">{{classe.nom}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<app-emploi *ngIf="selectedClasseId" [events]="events"></app-emploi>

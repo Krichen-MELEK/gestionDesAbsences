@@ -5,6 +5,7 @@ import {LayoutComponent} from './layout.component';
 import {Screen2Component} from './screen2/screen2.component';
 import {AbsenteismeComponent} from "./absenteisme/absenteisme.component";
 import {EmploiScreenComponent} from "./emploi-screen/emploi-screen.component";
+import {NoteAbsenceComponent} from "./note-absence/note-absence.component";
 
 const routes: Routes = [
     {
@@ -34,6 +35,10 @@ const routes: Routes = [
             {
                 path: 'Absenteisme',
                 component: AbsenteismeComponent
+            },
+            {
+                path: 'note/:idclasse/:idSeance',
+                component:NoteAbsenceComponent
             }
         ]
     }

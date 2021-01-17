@@ -45,7 +45,7 @@ public class AbsenceApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        initDataBase();
+//        initDataBase();
     }
 
     public void initDataBase() {
