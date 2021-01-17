@@ -1,1 +1,12 @@
-<p>note-absence works!</p>
+<h2 style="text-align: center"> Note de Presence</h2>
+<div *ngFor="let student of students" style="text-align: center">
+    <h5 style="display: inline-block; margin: 10px 50px" >{{student.nom}} {{student.prenom}}</h5>
+    <mat-radio-group aria-label="Select an option" (change)="radioChange($event.value,student.id)" name="{{student.id}}" >
+        <mat-radio-button value="1" style="margin: 10px 30px">Présent</mat-radio-button>
+        <mat-radio-button value="2" style="margin: 10px 30px">Absent</mat-radio-button>
+        <mat-radio-button value="3" style="margin: 10px 30px">Retard</mat-radio-button>
+    </mat-radio-group>
+</div>
+<button mat-raised-button color="primary" style="float: right" (click)="valider()" >Valider</button>
+
+

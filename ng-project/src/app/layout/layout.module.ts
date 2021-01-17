@@ -19,6 +19,9 @@ import { NavComponent } from './nav/nav.component';
 import { NoteAbsenceComponent } from './note-absence/note-absence.component';
 import { Screen1Component } from './screen1/screen1.component';
 import { Screen2Component } from './screen2/screen2.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
     imports: [
@@ -33,7 +36,10 @@ import { Screen2Component } from './screen2/screen2.component';
         SchedulerModule.forRoot({ locale: 'en', headerDateFormat: 'daysRange' }),
         MatTableModule,
         MatSelectModule,
-        MatChipsModule
+        MatChipsModule,
+        MatRadioModule,
+        MatButtonModule
+
     ],
     declarations: [
         Screen1Component,
@@ -45,7 +51,7 @@ import { Screen2Component } from './screen2/screen2.component';
         EmploiComponent,
         AbsenteismeComponent,
         EmploiScreenComponent,
-        NoteAbsenceComponent
+        NoteAbsenceComponent,
     ]
 
 })

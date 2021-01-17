@@ -18,4 +18,8 @@ export class ClasseService {
     getById(id: number): Observable<Classe> {
         return this.http.get<Classe>("/api/classe/id/" + id);
     }
+
+    addAbsense(value,studentId,seanceId){
+        return this.http.get("/api/absense/value/"+value+"/"+studentId+"/"+seanceId);
+    }
 }

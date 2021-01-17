@@ -22,4 +22,5 @@ public class Absence {
     private Student student;
     @ManyToOne()
     private Seance seance;
+    private String valeur;
 }
