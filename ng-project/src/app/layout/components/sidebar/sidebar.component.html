@@ -3,11 +3,13 @@
         <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/dashboard']">
             <mat-icon class="sidenav-icon">dashboard</mat-icon> {{ 'Dashboard' | translate }}
         </a>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/screen1']">
-            <mat-icon class="sidenav-icon">people</mat-icon> Liste des etudiants
+        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/student']">
+            <mat-icon class="sidenav-icon">people</mat-icon>
+            Liste des etudiants
         </a>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/screen2']">
-            <mat-icon class="sidenav-icon">people</mat-icon> Liste des enseignants
+        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/teacher']">
+            <mat-icon class="sidenav-icon">people</mat-icon>
+            Liste des enseignants
         </a>
         <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/emploi']">
             <mat-icon class="sidenav-icon">people</mat-icon> Emploi de temps

@@ -1,11 +1,12 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AbsenteismeComponent } from "./absenteisme/absenteisme.component";
+import { EmploiScreenComponent } from "./emploi-screen/emploi-screen.component";
+import { LayoutComponent } from './layout.component';
+import { NoteAbsenceComponent } from "./note-absence/note-absence.component";
+import { Screen1Component } from './screen1/screen1.component';
+import { Screen2Component } from './screen2/screen2.component';
 
-import {LayoutComponent} from './layout.component';
-import {Screen2Component} from './screen2/screen2.component';
-import {AbsenteismeComponent} from "./absenteisme/absenteisme.component";
-import {EmploiScreenComponent} from "./emploi-screen/emploi-screen.component";
-import {NoteAbsenceComponent} from "./note-absence/note-absence.component";
 
 const routes: Routes = [
     {
@@ -21,11 +22,11 @@ const routes: Routes = [
                 loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
             },
             {
-                path: 'screen1',
-                loadChildren: () => import('./screen1/screen1.module').then(m => m.Screen1Module)
+                path: 'student',
+                component: Screen1Component
             },
             {
-                path: 'screen2',
+                path: 'teacher',
                 component: Screen2Component
             },
             {
@@ -38,7 +39,7 @@ const routes: Routes = [
             },
             {
                 path: 'note/:idclasse/:idSeance',
-                component:NoteAbsenceComponent
+                component: NoteAbsenceComponent
             }
         ]
     }
@@ -48,4 +49,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class LayoutRoutingModule {}
+export class LayoutRoutingModule {
+}
