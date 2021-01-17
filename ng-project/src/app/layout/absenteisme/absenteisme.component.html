@@ -9,12 +9,12 @@
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
 
-        <ng-container matColumnDef="Subject">
+        <ng-container matColumnDef="subject">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject</th>
             <td mat-cell *matCellDef="let row"> {{row.subject}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Room">
+        <ng-container matColumnDef="room">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Room</th>
             <td mat-cell *matCellDef="let row"> {{row.room}} </td>
         </ng-container>
@@ -24,38 +24,38 @@
             <td mat-cell *matCellDef="let row"> {{row.dateDebut | date: 'dd/MM/yyyy'}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Heure debut">
+        <ng-container matColumnDef="dateDebut">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Heure debut</th>
             <td mat-cell *matCellDef="let row"> {{row.dateDebut | date: 'hh:mm'}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Heure fin">
+        <ng-container matColumnDef="dateFin">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Heure fin</th>
             <td mat-cell *matCellDef="let row">
                 {{row.dateFin | date: 'hh:mm'}}
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="Nb of absences">
+        <ng-container matColumnDef="numberOfAbsence">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nb of absences</th>
             <td mat-cell *matCellDef="let row">
 
                 {{row.numberOfAbsence}}
             </td>
         </ng-container>
-        <ng-container matColumnDef="Nb of presences">
+        <ng-container matColumnDef="numberOfPresent">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nb of presences</th>
             <td mat-cell *matCellDef="let row">
                 {{row.numberOfPresent}}
             </td>
         </ng-container>
-        <ng-container matColumnDef="Nb of retards">
+        <ng-container matColumnDef="numberOfRetard">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nb of retards</th>
             <td mat-cell *matCellDef="let row">
                 {{row.numberOfRetard}}
             </td>
         </ng-container>
-        <ng-container matColumnDef="Nb of appel non faite">
+        <ng-container matColumnDef="numberOfAppelNonFaite">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nb of appel non faite</th>
             <td mat-cell *matCellDef="let row">
                 {{row.numberOfAppelNonFaite}}

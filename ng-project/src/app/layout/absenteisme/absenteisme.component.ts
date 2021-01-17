@@ -33,7 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     styleUrls: ['./absenteisme.component.scss']
 })
 export class AbsenteismeComponent implements OnInit {
-    displayedColumns: string[] = ['Subject', 'Room', 'Date', 'Heure debut', 'Heure fin', 'Nb of absences', 'Nb of presences', 'Nb of retards', 'Nb of appel non faite'];
+    displayedColumns: string[] = ['subject', 'room', 'Date', 'dateDebut', 'dateFin', 'numberOfAbsence', 'numberOfPresent', 'numberOfRetard', 'numberOfAppelNonFaite'];
     students: Student[] = [];
     absences: Absence[];
     responseSeances: ResponseSeance[] = [];
